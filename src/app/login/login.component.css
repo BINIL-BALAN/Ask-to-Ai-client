@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Itim&display=swap');
+
+div[class="container d-flex flex-column align-items-center mt-4"]{
+    height: 90vh;
+}
+h2{
+    font-family: 'Itim', cursive;
+}
+a{
+    text-decoration: none;
+}
+.login-container{
+    margin-top: 5vh;
+    border-radius: 5px;
+    height: 50vh;
+    width:  60vw;
+    padding: 2rem;
+}
+.or{
+    position: absolute;
+    text-align: center;
+    top: 52.5%;
+    left: 63%;
+    border-radius: 40%;
+    background-color: white;
+    width: 2rem;
+}
+img{
+    width: 25vw;
+    height: 40vh;
+}

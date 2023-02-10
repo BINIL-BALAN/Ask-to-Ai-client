@@ -1,0 +1,29 @@
+div[class="container d-flex flex-column align-items-center mt-4"]{
+    height: 90vh;
+}
+h2{
+    font-family: 'Itim', cursive;
+}
+a{
+    text-decoration: none;
+}
+.login-container{
+    margin-top: 5vh;
+    border-radius: 5px;
+    height: fit-content;
+    width:  60vw;
+    padding: 2rem;
+}
+.or{
+    position: absolute;
+    text-align: center;
+    top: 61%;
+    left: 63%;
+    border-radius: 40%;
+    background-color: white;
+    width: 2rem;
+}
+img{
+    width: 25vw;
+    height: 50vh;
+}

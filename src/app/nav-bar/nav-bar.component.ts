@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
-
+  @Output() darkMODE = new EventEmitter()
+  darkModeToggle:boolean=true
+  ngOnInit(): void {
+    
+  }
+  
+    darkMode(){
+      this.darkModeToggle=!this.darkModeToggle
+      this.darkMODE.emit()
+    }
 }

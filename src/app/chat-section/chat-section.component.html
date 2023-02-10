@@ -1,1 +1,56 @@
-<p>chat-section works!</p>
+<div *ngIf="darkmode; else elsestatement">
+    <div class="row p-0 m-0">
+        <div class="col-5"></div>
+        <div class="col-4 text-white">
+            <h2 class="darkmode-h2">Ask To AI</h2>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="container w-100 darkmode">
+    
+        <div class="row">
+            <div class="question">
+                <strong>Q :</strong>
+                
+            </div>
+            <div class="answer">
+                <strong>Ans :</strong>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row w-100 px-0 mx-0 mt-1 py-0">
+        <div class="col-2"></div>
+        <div class="col-8 p-0"><input type="text" class="form-control m-0 w-100 darkmode-input"></div>
+        <div class="col-2 p-0"><button class="btn btn-primary w-25 darkmode-button mx-1 "><i class="fa-regular fa-paper-plane"></i></button></div>
+    </div>
+
+</div>
+
+<ng-template #elsestatement>
+    <div class="row p-0 m-0">
+        <div class="col-5"></div>
+        <div class="col-4 text-white">
+            <h2 class="brightmode-h2">Ask To AI</h2>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="container w-100 brightmode">
+    
+        <div class="row">
+            <div class="question">
+                <strong>Q :</strong>
+                
+            </div>
+            <div class="answer">
+                <strong>Ans :</strong>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row w-100 px-0 mx-0 mt-1 py-0">
+        <div class="col-2"></div>
+        <div class="col-8 p-0"><input type="text" class="form-control m-0 w-100 "></div>
+        <div class="col-2 p-0"><button class="btn btn-primary w-25 brightmode-button mx-1"><i class="fa-regular fa-paper-plane"></i></button></div>
+    </div>
+</ng-template>

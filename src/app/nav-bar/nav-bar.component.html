@@ -1,1 +1,64 @@
-<p>nav-bar works!</p>
+<div class="side-nav" *ngIf="darkModeToggle; else elseStatement">
+    <div class="mb-0 mt-1 h-25 p-0 mt-0">    
+        <div class="col-12 p-0 mt-0 pt-0">
+            <img class="rounded" src="https://www.joeyoungblood.com/wp-content/uploads/2022/12/openai-chatgpt-logo.png" alt="logo">
+        </div>
+    </div>
+
+    <div class="row mt-0 px-0">
+        <div class="col-2 p-0"></div>
+        <div class="col-8 h-75 darkmode-border rounded mt-3 py-0">
+            <ul class="list-group text-center mt-2">
+                <li class="list-group-item darkMode-li mt-2" data-toggle="tooltip" title="Edit profile">
+                    <a class="">
+                        <i class="fa-regular fa-user darkMode-i"></i>
+                    </a>
+                </li>
+                <li class="list-group-item darkMode-li mt-2" data-toggle="tooltip" title="Clear all questions">
+                    <a class=""><i class="fa fa-trash-can darkMode-i"></i></a>
+                </li>
+                <li (click)="darkMode()" class="list-group-item darkMode-li mt-2" data-toggle="tooltip" title="dark mode">
+                    <a class=""><i class="fa-regular fa-sun darkMode-i"></i></a>
+                </li>
+                <li class="list-group-item darkMode-li mt-2" data-toggle="tooltip" title="Sign out">
+                    <a class=""><i class="fa fa-sign-out darkMode-i"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-2 p-0"></div>
+    </div>
+</div>
+
+<ng-template #elseStatement>
+    <div class="side-nav">
+        <div class="mb-0 mt-1 h-25 p-0 mt-0">    
+            <div class="col-12 p-0 mt-0 pt-0">
+                <img class="rounded" src="https://www.joeyoungblood.com/wp-content/uploads/2022/12/openai-chatgpt-logo.png" alt="logo">
+            </div>
+        </div>
+    
+        <div class="row mt-0 px-0">
+            <div class="col-2 p-0"></div>
+            <div class="col-8 h-75 darkmode-border rounded mt-3 py-0">
+                <ul class="list-group text-center mt-2">
+                    <li class="list-group-item brightMode-li mt-2" data-toggle="tooltip" title="Edit profile">
+                        <a class="">
+                            <i class="fa-regular fa-user brightMode-i"></i>
+                        </a>
+                    </li>
+                    <li class="list-group-item brightMode-li mt-2" data-toggle="tooltip" title="Clear all questions">
+                        <a class=""><i class="fa fa-trash-can brightMode-i"></i></a>
+                    </li>
+                    <li (click)="darkMode()" class="list-group-item brightMode-li mt-2" data-toggle="tooltip" title="dark mode">
+                        <a class=""><i class="fa-regular fa-moon brightMode-i"></i></a>
+                    </li>
+                    <li class="list-group-item brightMode-li mt-2" data-toggle="tooltip" title="Sign out">
+                        <a class=""><i class="fa fa-sign-out brightMode-i"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-2 p-0"></div>
+        </div>
+    
+    </div>
+</ng-template>

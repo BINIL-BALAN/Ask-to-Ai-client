@@ -1,0 +1,82 @@
+div>p {
+    text-align: justify;
+}
+
+h2 {
+    font-family: 'Itim', cursive;
+}
+
+.chats {
+    margin: 0px;
+    height: 87vh;
+    overflow-y: scroll;
+    color: #b7b8b9;
+}
+
+.chatsBright{
+    margin: 0px;
+    height: 87vh;
+    overflow-y: scroll;
+    color: black;
+}
+
+.chats::-webkit-scrollbar {
+    width: 8px;
+    background-color: #888f9f;
+    margin-left: 1px;
+    margin-right: 5px;
+    border-radius: 6px;
+}
+
+.chats::-webkit-scrollbar-track {
+    background-color: #1a2235;
+    margin-left: 1px;
+    border-radius: 6px;
+}
+
+.chats::-webkit-scrollbar-thumb {
+    background-color: #888f9f;
+    margin-left: 1px;
+    border-radius: 6px;
+
+}
+
+.chatsBright::-webkit-scrollbar {
+    width: 8px;
+    background-color: white;
+    margin-left: 1px;
+    margin-right: 5px;
+    border-radius: 6px;
+}
+
+.chatsBright::-webkit-scrollbar-track {
+    background-color: white;
+    margin-left: 1px;
+    border-radius: 6px;
+}
+
+.chatsBright::-webkit-scrollbar-thumb {
+    background-color: #1a2235;
+    margin-left: 1px;
+    border-radius: 6px;
+
+}
+
+div[class="container mt-2"] {
+    height: 10px;
+}
+
+.darkmode-border {
+    /* border: 2px solid  #888f9f; */
+    border: 2px solid #b7b8b9;
+    border-left: none;
+    border-right: none;
+}
+.brightmode-border{
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+}
+p{
+    font-family: 'Itim', cursive;
+}
