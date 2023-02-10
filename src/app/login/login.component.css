@@ -12,20 +12,31 @@ a{
 .login-container{
     margin-top: 5vh;
     border-radius: 5px;
-    height: 50vh;
+    height: fit-content;
     width:  60vw;
     padding: 2rem;
 }
 .or{
-    position: absolute;
+    /* position: absolute; */
     text-align: center;
-    top: 52.5%;
-    left: 63%;
+    /* top: 52.5%;
+    left: 63%; */
     border-radius: 40%;
     background-color: white;
     width: 2rem;
 }
+
+.or::before,
+.or::after{
+    background-color: rgb(187, 183, 183);
+    content: "";
+    display: inline-block;
+    height: 1px;
+    vertical-align: middle;
+    width: 42%;
+    margin: 5px;
+}
 img{
     width: 25vw;
-    height: 40vh;
+    height: 50vh;
 }

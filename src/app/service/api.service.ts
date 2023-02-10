@@ -15,4 +15,13 @@ export class ApiService {
         }
        return this.api.post('http://localhost:3000/registration',body)
   }
+
+  login(email:string,password:string){
+     let body = {
+      email,
+      password
+     }
+     
+     return this.api.post('http://localhost:3000/login',body)
+  }
 }
