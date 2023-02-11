@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 const options = {
   headers: new HttpHeaders()
@@ -8,7 +9,8 @@ const options = {
   providedIn: 'root'
 })
 export class ApiService {
-
+  questions = new BehaviorSubject([])
+  questionArray:any = []
   constructor(private api: HttpClient) { }
 
   insertToken() {
@@ -39,7 +41,17 @@ export class ApiService {
   }
 
   ask(question:string){
-    console.log('inside api');
    return this.api.get(`http://localhost:3000/ask/${question}`,this.insertToken())
+}
+
+getQuestionArray(){
+  this.api.get('http://localhost:3000/get-questions',this.insertToken()).subscribe((result:any)=>{
+    this.questionArray=result.questions
+    this.questions.next(this.questionArray)
+  },
+  (result:any)=>{
+    console.log('inside get array error',result);
+  }
+  )  
 }
 }

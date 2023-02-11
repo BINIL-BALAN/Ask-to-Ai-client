@@ -1,13 +1,14 @@
 <div class="row h-100 mx-0 px-0" style="border: 1px solid #888f9f;" *ngIf="darkmode; else elseStatement">
-    <h2 class="mb-0 text-white">Chats</h2>
+    <h4 class="mb-0 text-white mt-2">Chats</h4>
     <div class="container ">
         <button class="btn mb-2 float-end p-1"> <i class="fa fa-plus text-white"></i> </button>
     </div>
     <div class="chats">
-        <div class="row w-100 mx-0 mt-0 darkmode-border" style="border-color: #242c3f;">
+        <div class="row w-100 mx-0 mt-0 darkmode-border" style="border-color: #242c3f;" *ngFor="let question of questionsArray">
             <div class="col-10 mx-0">
                 <p class="">
                     <i class="fa-regular fa-message"></i>
+                    {{question}}
                 </p>
             </div>
             <div class="col-2 px-0 mx-0">
@@ -15,21 +16,21 @@
                 <button class="btn p-1"><i class="fa fa-trash-can text-danger"></i></button>
             </div>
         </div>
-
     </div>
 </div>
 
 <ng-template #elseStatement>
-    <div class="row h-100 mx-0 px-0 border-top-0" style="border: 1px solid black;">
-        <h2 class="mb-0 text-dark">Chats</h2>
+    <div class="row h-100 mx-0 px-0 border-top-0 border-bottom-0" style="border: 1px solid black;">
+        <h4 class="mb-0 text-dark">Chats</h4>
         <div class="container ">
-            <button class="btn mb-2 float-end p-1"> <i class="fa fa-plus text-white"></i> </button>
+            <button class="btn mb-2 float-end p-1"> <i class="fa fa-plus text-dark"></i> </button>
         </div>
         <div class="chatsBright">
-            <div class="row w-100 mx-0 mt-0 brightmode-border" style="border-color: black;">
+            <div class="row w-100 mx-0 mt-0 brightmode-border" style="border-color: black;" *ngFor="let question of questionsArray">
                 <div class="col-10 mx-0 mt-1">
                     <p class="">
                         <i class="fa-regular fa-message"></i>
+                        {{question}}
                     </p>
                 </div>
                 <div class="col-2 px-0 mx-0">
