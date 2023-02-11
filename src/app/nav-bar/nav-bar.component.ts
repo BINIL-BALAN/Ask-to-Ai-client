@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -7,9 +7,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class NavBarComponent {
   @Output() darkMODE = new EventEmitter()
+  username:string=""
   darkModeToggle:boolean=true
   ngOnInit(): void {
-    
+    this.username = localStorage.getItem('username') || ''
   }
   
     darkMode(){

@@ -35,3 +35,14 @@ img{
 .brightMode-i{
     color:#0a80fe;
 }
+.big{
+    /* font-size: larger; */
+    letter-spacing: 2px;
+    /* font-family: 'Righteous', cursive; */
+    font-family: 'Titan One', cursive;
+}
+h4{
+    /* font-family: 'Righteous', cursive; */
+    font-family: 'Titan One', cursive;
+    letter-spacing: 5px;
+}

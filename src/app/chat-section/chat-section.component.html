@@ -7,25 +7,36 @@
         <div class="col-2"></div>
     </div>
     <div class="container w-100 darkmode">
-    
+
         <div class="row">
             <div class="question">
                 <strong>Q :</strong>
-                
+
             </div>
             <div class="answer">
-                <strong>Ans :</strong>
+                <strong>Ans :{{answer}}</strong>
             </div>
         </div>
+        <h1 class="text-white">{{errorMessage}}</h1>
     </div>
-    
-    <div class="row w-100 px-0 mx-0 mt-1 py-0">
-        <div class="col-2"></div>
-        <div class="col-8 p-0"><input type="text" class="form-control m-0 w-100 darkmode-input"></div>
-        <div class="col-2 p-0"><button class="btn btn-primary w-25 darkmode-button mx-1 "><i class="fa-regular fa-paper-plane"></i></button></div>
-    </div>
+    <form [formGroup]="chatForm" (ngSubmit)="askQuestion()" class="p-0 m-0">
+        <div class="row w-100 px-0 mx-0 mt-1 py-0">
+            <div class="col-2"></div>
 
+            <div class="col-8 p-0 m-0">
+                <input name="question" formControlName="question" type="text" class="form-control m-0 w-100 darkmode-input">
+            </div>
+            <div class="col-2 p-0">
+                <button type="submit" class="btn btn-primary w-25 darkmode-button mx-1 ">
+                    <i class="fa-regular fa-paper-plane"></i>
+                </button>
+
+            </div>
+
+        </div>
+    </form>
 </div>
+
 
 <ng-template #elsestatement>
     <div class="row p-0 m-0">
@@ -36,21 +47,27 @@
         <div class="col-2"></div>
     </div>
     <div class="container w-100 brightmode">
-    
+
         <div class="row">
             <div class="question">
                 <strong>Q :</strong>
-                
+
             </div>
             <div class="answer">
-                <strong>Ans :</strong>
+                <strong>Ans :{{answer}}</strong>
             </div>
+            <h1>{{errorMessage}}</h1>
         </div>
     </div>
-    
-    <div class="row w-100 px-0 mx-0 mt-1 py-0">
-        <div class="col-2"></div>
-        <div class="col-8 p-0"><input type="text" class="form-control m-0 w-100 "></div>
-        <div class="col-2 p-0"><button class="btn btn-primary w-25 brightmode-button mx-1"><i class="fa-regular fa-paper-plane"></i></button></div>
-    </div>
+
+   <form [formGroup]="chatForm" (ngSubmit)="askQuestion()">
+        <div class="row w-100 px-0 mx-0 mt-1 py-0">
+            <div class="col-2"></div>
+            <div class="col-8 p-0"><input name="question" formControlName="question" type="text" class="form-control m-0 w-100 "></div>
+            <div class="col-2 p-0"><button type="submit" class="btn btn-primary w-25 brightmode-button mx-1">
+                <i class="fa-regular fa-paper-plane"></i>
+            </button>
+        </div>
+        </div>
+   </form>
 </ng-template>
