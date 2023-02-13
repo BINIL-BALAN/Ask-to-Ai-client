@@ -1,0 +1,22 @@
+ <div [class]="brigtMode" *ngIf="expireState; else elseStatement">
+        <div class="col-1 px-0"><app-nav-bar (darkMODE)="darkMode()"></app-nav-bar></div>
+        <div class="col-2 px-0"></div>
+        <div class="col-9 px-0"><app-demo-chat-section [darkmode]="darkModeToggle"></app-demo-chat-section></div>   
+    </div>
+
+    <ng-template #elseStatement>
+        <div class="row dark-mode px-0 mx-0">
+               <div class="d-flex flex-column justify-content-center align-items-center text-secondary"> 
+                <h2>Session expired</h2> 
+                <div class="">
+                    <button class="btn btn-outline-primary mx-3" routerLink="/login">Login</button>
+                    <button class="btn btn-primary mx-3" routerLink="/register">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+
+
+
+

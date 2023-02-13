@@ -63,4 +63,8 @@ deleteOnechat(index:number){
 
   return this.api.delete('http://localhost:3000/delete-one-chat/'+index,this.insertToken())
 }
+
+tryDemo(question:string){
+  return this.api.get(`http://localhost:3000/try-demo/${question}`)
+}
 }

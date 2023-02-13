@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { ApiService } from '../service/api.service';
 @Component({
@@ -12,7 +13,8 @@ export class NavBarComponent {
   username:string=""
   darkModeToggle:boolean=true
   clearChat:boolean = false
-  constructor (private api:ApiService) {}
+  logoutStatus:boolean = false
+  constructor (private api:ApiService,private router:Router) {}
   ngOnInit(): void {
     this.username = localStorage.getItem('username') || ''
   }
@@ -39,5 +41,15 @@ export class NavBarComponent {
       )
       this.api.getQuestionArray()
       this.deletechat.emit()
+    }
+
+    logout(){
+      this.logoutStatus=true
+       localStorage.removeItem('email')
+       localStorage.removeItem('token')
+       setTimeout(() => {
+        this.logoutStatus=false
+        this.router.navigateByUrl('')
+       }, 2000);
     }
 }

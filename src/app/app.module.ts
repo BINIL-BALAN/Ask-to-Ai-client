@@ -12,6 +12,9 @@ import { RegistrationComponent } from './registration/registration.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import{ HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { TrySamplePageComponent } from './try-sample-page/try-sample-page.component';
+import { DemoChatSectionComponent } from './demo-chat-section/demo-chat-section.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     NavBarComponent,
     RegistrationComponent,
-    SideBarComponent
+    SideBarComponent,
+    LandingPageComponent,
+    TrySamplePageComponent,
+    DemoChatSectionComponent
   ],
   imports: [
     BrowserModule,

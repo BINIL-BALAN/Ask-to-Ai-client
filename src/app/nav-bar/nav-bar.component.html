@@ -28,8 +28,11 @@
                     ngbTooltip="Bright mode">
                     <a class=""><i class="fa-regular fa-sun darkMode-i"></i></a>
                 </li>
-                <li class="list-group-item darkMode-li mt-2" placement="end" ngbTooltip="Sign out">
-                    <a class=""><i class="fa fa-sign-out darkMode-i"></i></a>
+                <li (click)="logout()" class="list-group-item darkMode-li mt-2" placement="end" ngbTooltip="Sign out">
+                    <a class="">
+                        <div class="spinner-border text-danger" *ngIf="logoutStatus"></div>
+                        <i class="fa fa-sign-out darkMode-i" *ngIf="!logoutStatus"></i>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -67,8 +70,11 @@
                         ngbTooltip="Dark mode">
                         <a class=""><i class="fa-regular fa-moon brightMode-i"></i></a>
                     </li>
-                    <li class="list-group-item brightMode-li mt-2" placement="end" ngbTooltip="Sign out">
-                        <a class=""><i class="fa fa-sign-out brightMode-i"></i></a>
+                    <li (click)="logout()" class="list-group-item brightMode-li mt-2" placement="end" ngbTooltip="Sign out">
+                        <a class="">
+                            <div class="spinner-border text-danger" *ngIf="logoutStatus"></div>
+                            <i class="fa fa-sign-out brightMode-i" *ngIf="!logoutStatus"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
