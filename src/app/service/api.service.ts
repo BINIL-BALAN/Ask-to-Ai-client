@@ -54,4 +54,13 @@ getQuestionArray(){
   }
   )  
 }
+
+clearChats(){
+  return this.api.delete('http://localhost:3000/delete-all-chats',this.insertToken())
+}
+
+deleteOnechat(index:number){
+
+  return this.api.delete('http://localhost:3000/delete-one-chat/'+index,this.insertToken())
+}
 }

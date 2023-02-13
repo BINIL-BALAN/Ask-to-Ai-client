@@ -46,3 +46,15 @@ h4{
     font-family: 'Titan One', cursive;
     letter-spacing: 5px;
 }
+
+.username-darkmode{
+    color: #b7b8b9;
+    text-align: center;
+    width: 87%;
+}
+
+.username-brightmode{
+    color: black;
+    text-align: center;
+    width: 87%;
+}

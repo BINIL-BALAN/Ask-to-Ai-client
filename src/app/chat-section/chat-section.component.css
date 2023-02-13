@@ -19,37 +19,37 @@
 }
 
 .darkmode::-webkit-scrollbar {
-    width: 12px;
+    width: 5px;
     background-color: #1a2235;
     border-radius: 10px;
 }
 
 .darkmode::-webkit-scrollbar-track {
-    width: 12px;
+    width: 5px;
     background-color: #1a2235;
     border-radius: 10px;
 }
 
 .darkmode::-webkit-scrollbar-thumb {
-    width: 12px;
+    width: 5px;
     background-color: #7b8497;
     border-radius: 10px;
 }
 
 .brightmode::-webkit-scrollbar {
-    width: 12px;
+    width: 5px;
     background-color: white;
     border-radius: 10px;
 }
 
 .brightmode::-webkit-scrollbar-track {
-    width: 12px;
+    width: 5px;
     background-color: white;
     border-radius: 10px;
 }
 
 .brightmode::-webkit-scrollbar-thumb {
-    width: 12px;
+    width: 5px;
     background-color: #1a2235;
     border-radius: 10px;
 }
@@ -103,4 +103,14 @@ div[class="row"] {
     border-right: none;
     border: 1px solid #c0c0c0;
     color: white;
+}
+.sample-display{
+    background-color: #293244;
+    border-radius: 5px;
+    padding: 1rem;
+}
+.sample-display-brightmode{
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 1rem;
 }

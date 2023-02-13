@@ -21,7 +21,7 @@ h4 {
 }
 
 .chats::-webkit-scrollbar {
-    width: 8px;
+    width: 5px;
     background-color: #888f9f;
     margin-left: 1px;
     margin-right: 5px;
@@ -35,6 +35,7 @@ h4 {
 }
 
 .chats::-webkit-scrollbar-thumb {
+    width: 5px;
     background-color: #888f9f;
     margin-left: 1px;
     border-radius: 6px;
@@ -42,7 +43,7 @@ h4 {
 }
 
 .chatsBright::-webkit-scrollbar {
-    width: 8px;
+    width: 5px;
     background-color: white;
     margin-left: 1px;
     margin-right: 5px;
@@ -56,6 +57,7 @@ h4 {
 }
 
 .chatsBright::-webkit-scrollbar-thumb {
+    width: 5px;
     background-color: #1a2235;
     margin-left: 1px;
     border-radius: 6px;

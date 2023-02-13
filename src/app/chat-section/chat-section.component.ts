@@ -7,8 +7,9 @@ import { ApiService } from '../service/api.service';
   templateUrl: './chat-section.component.html',
   styleUrls: ['./chat-section.component.css']
 })
-export class ChatSectionComponent implements OnInit {
-    errorState:boolean = false
+export class ChatSectionComponent{
+    startState:boolean = true
+    loadingState:boolean = false
     errorMessage:string = ""
     answer:string = ''
     chatsArray:any =[]
@@ -18,24 +19,22 @@ export class ChatSectionComponent implements OnInit {
   chatForm = this.fBuilder.group({
     question:['',[Validators.required]]
   })
-ngOnInit(): void {
-  this.api.getQuestionArray()
-}
     askQuestion(){
-      console.log('inside chat component')
+      this.loadingState = true
       if(this.chatForm.valid){
           let question = this.chatForm.value.question || ''
           this.api.ask(question).subscribe(
           (result:any)=>{
-            this.errorState = false
+            this.startState = false
+            this.loadingState = false
             this.answer = result.answer 
             this.chatsCollection(question,this.answer,true)
             this.api.getQuestionArray()
             this.updateSideBar.emit()
           },
           (result:any)=>{
-            
-            this.errorState = true
+            this.loadingState = false
+            this.startState = false
             this.api.getQuestionArray()
             this.updateSideBar.emit()
             this.errorMessage = result.error.message
@@ -43,9 +42,9 @@ ngOnInit(): void {
           }
           )
       }else{
-        this.errorState = true
+        this.startState = false
+        this.loadingState = false
         this.errorMessage = "No question asked"
-        alert('No question asked')
       }
     }
   

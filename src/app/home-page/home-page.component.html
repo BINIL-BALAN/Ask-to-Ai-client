@@ -1,5 +1,5 @@
 <div [class]="brigtMode">
-    <div class="col-1 px-0"><app-nav-bar (darkMODE)="darkMode()"></app-nav-bar></div>
+    <div class="col-1 px-0"><app-nav-bar (darkMODE)="darkMode()" (deletechat)="updatequestions()"></app-nav-bar></div>
     <div class="col-3 px-0"><app-side-bar [darkmode]="darkModeToggle" [questionsArray]="questions"></app-side-bar></div>
     <div class="col-8 px-0"><app-chat-section [darkmode]="darkModeToggle" (updateSideBar)="updatequestions()"></app-chat-section></div>   
 </div>

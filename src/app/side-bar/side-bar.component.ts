@@ -15,4 +15,17 @@ export class SideBarComponent implements OnInit {
     this.questionsArray = result
   })
   }
+
+  deleteOneChat(index:number){
+    this.api.deleteOnechat(index).subscribe((result:any)=>{
+      console.log(result);
+      this.api.getQuestionArray()
+      this.questionsArray = result
+    },
+    (result:any)=>{
+      console.log(result);
+    }
+    )
+  }
+
 }
