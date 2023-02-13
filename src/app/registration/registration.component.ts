@@ -12,6 +12,7 @@ export class RegistrationComponent {
   constructor(private api: ApiService, private fBuilder: FormBuilder,private router:Router) { }
     regisrationMessage:string=''
     regisrationMessageclass:string=''
+    registerState:boolean = false
     registrationForm = this.fBuilder.group({
     username: ['', [Validators.required, Validators.pattern('[0-9a-zA-Z]*')]],
     email: ['', [Validators.required]],
@@ -20,29 +21,36 @@ export class RegistrationComponent {
 
   signUp() {
     if(this.registrationForm.valid){
+      this.registerState=true
       let username=this.registrationForm.value.username || ''
       let email=this.registrationForm.value.email || ''
       let password=this.registrationForm.value.password || ''
 
       this.api.regiaster(username, email, password).subscribe((result: any) => {
-           this.regisrationMessage=result.message
+        setTimeout(() => {
+          this.registerState=false
+          this.regisrationMessage=result.message
            this.regisrationMessageclass='alert alert-success'
+        }, 2000);
            setTimeout(()=>{
-            this.router.navigateByUrl("")
-           },2000)
+            this.router.navigateByUrl("/login")
+           },3000)
       },
         (result: any) => {
-          console.log('inside error', result);
-          this.regisrationMessage=result.error.message
+          setTimeout(() => {
+            this.registerState=false
+            this.regisrationMessage=result.error.message
           this.regisrationMessageclass='alert alert-danger'
+          }, 2000);
           setTimeout(() => {
             this.registrationForm.reset()
             this.regisrationMessage=''
             this.regisrationMessageclass=''
-          }, 2000); 
+          }, 3000); 
         }
       )
     }else{
+      this.registerState=false
       this.regisrationMessage='Please fill all field'
       this.regisrationMessageclass='alert alert-danger'
       setTimeout(() => {

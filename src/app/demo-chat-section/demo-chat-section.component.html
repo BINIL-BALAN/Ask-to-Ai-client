@@ -1,0 +1,186 @@
+<div *ngIf="darkmode; else elsestatement">
+    <div class="row p-0 m-0">
+        <div class="col-5"></div>
+        <div class="col-4 text-white">
+            <h2 class="darkmode-h2">Ask To AI</h2>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="container w-100 darkmode">
+     <div class="container mt-5" *ngIf="startState">
+        <div class="row">
+            <div class="col-4">
+              <h5 class="text-center mt-1"> 
+                <i class="fa-regular fa-lightbulb"></i> <br>
+                 Examples
+                </h5>
+                <p class="sample-display">
+                    How do I make an HTTP request in Javascript?
+                </p>
+                <p class="sample-display">
+                    Explain quantum computing in simple terms
+                </p>
+                <p class="sample-display">
+                    Explain about programming language
+                </p>
+            </div>
+            <div class="col-4">
+                <h5 class="text-center mt-1"> 
+                <i class="fa fa-bolt"></i> <br>
+                 Capabilities
+                </h5>
+                <p class="sample-display">
+                    Remembers what user said earlier in the conversation
+                </p>
+                <p class="sample-display">
+                    Allows user to provide follow-up corrections
+                </p>
+                <p class="sample-display">
+                    Trained to decline inappropriate requests
+                </p>
+            </div>
+            <div class="col-4">
+                <h5 class="text-center mt-1"> 
+                <i class="fa fa-triangle-exclamation"></i> <br>
+                 Limitations
+                </h5>
+                <p class="sample-display">
+                    May occasionally generate incorrect information
+                </p>
+                <p class="sample-display">
+                    Produce harmful instructions or biased content
+                </p>
+                <p class="sample-display">
+                    Limited knowledge of world and events after 2021
+                </p>
+            </div>
+        </div>
+     </div>
+        <div class="row" *ngFor="let chat of chatsArray">
+            <div class="question">
+                <strong>Q : </strong>{{chat.question}}
+
+            </div>
+            
+               <div *ngIf="chat.state; else errorState">
+                    <div class="answer">
+                        <strong>Ans : </strong>{{chat.answer}}
+                    </div>
+               </div>
+                <ng-template #errorState>
+                    <div class="alert alert-danger"><strong>{{chat.answer}}</strong></div>
+                </ng-template>
+            
+        </div>
+    </div>
+    <form [formGroup]="chatForm" (ngSubmit)="askQuestion()" class="p-0 m-0">
+        <div class="row w-100 px-0 mx-0 mt-1 py-0">
+            <div class="col-2 d-flex justify-content-center">
+               <div class="spinner-border text-primary" *ngIf="loadingState"></div>
+            </div>
+
+            <div class="col-8 p-0 m-0">
+                <input name="question" formControlName="question" type="text" class="form-control m-0 w-100 darkmode-input" placeholder="Type here....">
+            </div>
+            <div class="col-2 p-0">
+                <button type="submit" class="btn btn-primary w-25 darkmode-button mx-1 ">
+                    <i class="fa-regular fa-paper-plane"></i>
+                </button>
+
+            </div>
+
+        </div>
+    </form>
+</div>
+
+
+<ng-template #elsestatement>
+    <div class="row p-0 m-0">
+        <div class="col-5"></div>
+        <div class="col-4 text-white">
+            <h2 class="brightmode-h2">Ask To AI</h2>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="container w-100 brightmode">
+        <div class="container mt-5" *ngIf="startState">
+            <div class="row">
+                <div class="col-4">
+                  <h5 class="text-center mt-1"> 
+                    <i class="fa-regular fa-lightbulb"></i> <br>
+                     Examples
+                    </h5>
+                    <p class="sample-display-brightmode">
+                        How do I make an HTTP request in Javascript?
+                    </p>
+                    <p class="sample-display-brightmode">
+                        Explain quantum computing in simple terms
+                    </p>
+                    <p class="sample-display-brightmode">
+                        Explain about programming language
+                    </p>
+                </div>
+                <div class="col-4">
+                    <h5 class="text-center mt-1"> 
+                    <i class="fa fa-bolt"></i> <br>
+                     Capabilities
+                    </h5>
+                    <p class="sample-display-brightmode">
+                        Remembers what user said earlier in the conversation
+                    </p>
+                    <p class="sample-display-brightmode">
+                        Allows user to provide follow-up corrections
+                    </p>
+                    <p class="sample-display-brightmode">
+                        Trained to decline inappropriate requests
+                    </p>
+                </div>
+                <div class="col-4">
+                    <h5 class="text-center mt-1"> 
+                    <i class="fa fa-triangle-exclamation"></i> <br>
+                     Limitations
+                    </h5>
+                    <p class="sample-display-brightmode">
+                        May occasionally generate incorrect information
+                    </p>
+                    <p class="sample-display-brightmode">
+                        Produce harmful instructions or biased content
+                    </p>
+                    <p class="sample-display-brightmode">
+                        Limited knowledge of world and events after 2021
+                    </p>
+                </div>
+            </div>
+         </div>
+        <div class="row" *ngFor="let chat of chatsArray">
+            <div class="question">
+                <strong>Q : </strong>{{chat.question}}
+
+            </div>
+            
+               <div *ngIf="chat.state; else errorState">
+                    <div class="answer">
+                        <strong>Ans : </strong>{{chat.answer}}
+                    </div>
+               </div>
+                <ng-template #errorState>
+                    <div class="alert alert-danger"><strong>{{chat.answer}}</strong></div>
+                </ng-template>
+        </div>
+    </div>
+
+    <form [formGroup]="chatForm" (ngSubmit)="askQuestion()">
+        <div class="row w-100 px-0 mx-0 mt-1 py-0">
+            <div class="col-2 d-flex justify-content-center">
+                <div class="spinner-border text-primary" *ngIf="loadingState"></div>
+            </div>
+            <div class="col-8 p-0">
+                <input name="question" formControlName="question" type="text" class="form-control m-0 w-100" placeholder="Type here....">
+            </div>
+            <div class="col-2 p-0"><button type="submit" class="btn btn-primary w-25 brightmode-button mx-1">
+                    <i class="fa-regular fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</ng-template>

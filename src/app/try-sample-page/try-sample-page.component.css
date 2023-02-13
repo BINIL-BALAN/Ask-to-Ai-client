@@ -1,0 +1,10 @@
+.dark-mode{
+    background-color:#1a2235; 
+    color: black;
+    height: 100vh;
+}
+
+.bright-mode{
+    background-color:white; 
+    color: black;
+}

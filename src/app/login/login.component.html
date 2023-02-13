@@ -1,28 +1,27 @@
-<div [class]="loginMesageClass"><strong>{{loginMessage}}</strong></div>
+ <div [class]="loginMesageClass"><strong>{{loginMessage}}</strong></div>
 <div class="container d-flex flex-column align-items-center mt-4">
     <div class="title">
-        <h2>Ask to AI</h2>
+        <h2>Ask to AI  <div class="spinner-border text-primary" *ngIf="logingState"></div></h2>
     </div>
 
-    <div class="login-container border ">
+    <div class="login-container shadow">
        <div class="row">
-        <div class="col-6 border-end">
+        <!-- <div class="col-6 border-end">
             <img class="rounded" src="https://www.joeyoungblood.com/wp-content/uploads/2022/12/openai-chatgpt-logo.png" alt="logo">
-        </div>
-          <div class="col-6">
+        </div> -->
+          <div class="col-12">
                 <form [formGroup]="loginForm" (ngSubmit)=" userLogin()" class="mb-4">
                     <h5 class="text-center text-seconadry">Login</h5> 
                     <input name="email" formControlName="email" type="email" class="form-control mt-3"  placeholder="Email">
             <div class="text-danger" *ngIf="this.loginForm.get('email')?.errors && this.loginForm.get('email')?.touched">Invalid email</div>
                     <input name="password" formControlName="password" type="password" class="form-control mt-3" placeholder="Password">
             <div class="text-danger" *ngIf="this.loginForm.get('password')?.errors && this.loginForm.get('password')?.touched" >Invalid email</div>
-                    <button type="submit" class="btn btn-success w-100 mt-3">Login</button>
+            <button type="submit" class="btn btn-success w-100 mt-3">Login</button>
                 </form>
                 <p class="text-secondary text-center or w-100">OR</p>
                 <p class="text-secondary text-center">Don't have an account ? <a routerLink="/register">Sign up</a> </p>
+              
           </div>
         </div>
        </div>
-</div>
-
-
+</div> 

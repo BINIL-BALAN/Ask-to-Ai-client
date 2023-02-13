@@ -1,14 +1,14 @@
 <div class="container d-flex flex-column align-items-center mt-4">
     <div class="title">
-        <h2 class="text-dark">Ask to AI</h2>
+        <h2 class="text-dark">Ask to AI <div class="spinner-border text-primary" *ngIf="registerState"></div></h2>
     </div>
     <div [class]="regisrationMessageclass">{{regisrationMessage}}</div>
-    <div class="login-container border mb-0">
+    <div class="login-container mb-0 shadow">
        <div class="row">
-        <div class="col-6 border-end">
+        <!-- <div class="col-6 border-end">
             <img class="rounded" src="https://www.joeyoungblood.com/wp-content/uploads/2022/12/openai-chatgpt-logo.png" alt="logo">
-        </div>
-          <div class="col-6">
+        </div> -->
+          <div class="col-12">
                 <form [formGroup]="registrationForm" (ngSubmit)="signUp()" class="mb-4">
                     <h5 class="text-center text-secondary">Sign up</h5>
                     <input name="username" formControlName="username" type="text" class="form-control mt-3" name="" placeholder="Username">
@@ -18,7 +18,7 @@
                     <input name="password" formControlName="password" type="password" class="form-control mt-3" placeholder="Password">
                     <div class="mb-3 text-danger" *ngIf="this.registrationForm.get('password')?.errors && this.registrationForm.get('password')?.touched">Invalid password</div>
                    <button type="submit" class="btn btn-success w-100 mt-3">Sign up</button>
-                   <h5 class="text-center mt-4"><a class="link-unstyled" routerLink="">Login</a></h5>
+                   <a class="link-unstyled btn btn-outline-primary w-100 mt-4" routerLink="">Login</a>
                 </form>
                 
           </div>
