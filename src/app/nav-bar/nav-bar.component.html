@@ -19,7 +19,10 @@
                     </a>
                 </li>
                 <li (click)="clearAllChats()" class="list-group-item darkMode-li mt-2" placement="end" ngbTooltip="Delete all chats">
-                    <a class=""><i class="fa fa-trash-can darkMode-i"></i></a>
+                    <a class="">
+                        <div class="spinner-border text-danger" *ngIf="clearChat"></div>
+                        <i class="fa fa-trash-can darkMode-i" *ngIf="!clearChat">
+                     </i></a>
                 </li>
                 <li (click)="darkMode()" class="list-group-item darkMode-li mt-2" placement="end"
                     ngbTooltip="Bright mode">

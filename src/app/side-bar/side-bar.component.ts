@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-side-bar',
@@ -9,7 +10,8 @@ import { ApiService } from '../service/api.service';
 export class SideBarComponent implements OnInit {
   @Input() darkmode:boolean = true
   @Input() questionsArray:any = []
-  constructor (private api:ApiService) {}
+  copyMessageStatus:boolean=false
+  constructor (private api:ApiService,private clipboard:Clipboard) {}
   ngOnInit(): void {
   this.api.questions.subscribe((result:any)=>{
     this.questionsArray = result
@@ -26,6 +28,14 @@ export class SideBarComponent implements OnInit {
       console.log(result);
     }
     )
+  }
+
+  copyToClipboard(text:string){
+      this.clipboard.copy(text)
+      this.copyMessageStatus = true
+      setTimeout(() => {
+        this.copyMessageStatus = false
+      }, 2000);
   }
 
 }
